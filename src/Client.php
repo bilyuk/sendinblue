@@ -87,4 +87,9 @@ class Client
             new UpdateContact(['attributes' => $attributes])
         ]);
     }
+    
+    public function updateOrCreate($email, $attributes = [])
+    {
+        return \SendinBlue::exists($email) ? \SendinBlue::update($email, $attributes) : \SendinBlue::create($email, $attributes);
+    }
 }
