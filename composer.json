@@ -1,5 +1,5 @@
 {
-    "name": "bilyuktallium/sendinblue",
+    "name": "bilyuk/sendinblue",
     "description": "SendinBlue API v3 wrapper for Laravel",
     "license": "MIT",
     "authors": [
@@ -8,5 +8,17 @@
             "email": "bilyukd@gmail.com"
         }
     ],
-    "require": {}
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "bilyuk\\Sendinblue\\": "src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "bilyuk\\Sendinblue\\ServiceProvider"
+            ]
+        }
+    }
 }
