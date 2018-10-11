@@ -1,0 +1,12 @@
+{
+    "name": "bilyuktallium/sendinblue",
+    "description": "SendinBlue API v3 wrapper for Laravel",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "bilyuk",
+            "email": "bilyukd@gmail.com"
+        }
+    ],
+    "require": {}
+}
