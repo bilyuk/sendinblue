@@ -1,9 +1,8 @@
 <?php
 
-namespace Juanparati\Sendinblue;
+namespace bilyuk\Sendinblue;
 
 use Illuminate\Support\ServiceProvider as LaravelServiceProvider;
-
 
 class ServiceProvider extends LaravelServiceProvider
 {
@@ -26,6 +25,11 @@ class ServiceProvider extends LaravelServiceProvider
      */
     public function register()
     {
-        //
+        // Register Sendinblue API client
+        $this->app->singleton(Client::class, function ($app)
+        {
+            return new Client($app['config']['services.sendinblue.v3']);
+        });
+        $this->app->alias(Client::class, 'sendinblue');
     }
 }

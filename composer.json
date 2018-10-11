@@ -8,7 +8,9 @@
             "email": "bilyukd@gmail.com"
         }
     ],
-    "require": {},
+    "require": {
+        "sendinblue/api-v3-sdk": "^6.0"
+    },
     "autoload": {
         "psr-4": {
             "bilyuk\\Sendinblue\\": "src"
@@ -20,6 +22,5 @@
                 "bilyuk\\Sendinblue\\ServiceProvider"
             ]
         }
-    },
-    "minimum-stability": "stable"
+    }
 }
