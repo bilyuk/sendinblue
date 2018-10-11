@@ -20,5 +20,6 @@
                 "bilyuk\\Sendinblue\\ServiceProvider"
             ]
         }
-    }
+    },
+    "minimum-stability": "stable"
 }
