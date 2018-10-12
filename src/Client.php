@@ -33,10 +33,10 @@ class Client
         return new $api($this->client, $this->config);
     }
 
-    public function callApi($api, $method, $arguments)
+    public function callApi($api, $method, ...$arguments)
     {
         try {
-            return call_user_func([$this->getApi($api), $method], $arguments);
+            return call_user_func_array([$this->getApi($api), $method], $arguments);
         } catch (ApiException $exception) {
             return false;
         }
@@ -82,14 +82,6 @@ class Client
      */
     public function update($email, $attributes = [])
     {
-        return $this->callApi('ContactsApi', 'updateContact', [
-            $email,
-            new UpdateContact(['attributes' => $attributes])
-        ]);
-    }
-    
-    public function updateOrCreate($email, $attributes = [])
-    {
-        return \SendinBlue::exists($email) ? \SendinBlue::update($email, $attributes) : \SendinBlue::create($email, $attributes);
+        return $this->callApi('ContactsApi', 'updateContact', $email, new UpdateContact(['attributes' => $attributes]));
     }
 }
