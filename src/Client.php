@@ -84,4 +84,13 @@ class Client
     {
         return $this->callApi('ContactsApi', 'updateContact', $email, new UpdateContact(['attributes' => $attributes]));
     }
+
+    /**
+     * @param $email
+     * @return bool|mixed
+     */
+    public function delete($email)
+    {
+        return $this->callApi('ContactsApi', 'deleteContact', $email);
+    }
 }
